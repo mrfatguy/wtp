@@ -1,0 +1,124 @@
+WTP: ChangeLog
+------------------------------------------------------------------------------
+
+[v%%VERSION] <%%EMAIL> ( %%DATE )
+  * Fixed a bug in the path and filename handling.
+
+[v1.0] <%%EMAIL> ( Sun May  2 15:43:30 CEST 2004 )
+  * Fixes in error reporting.
+  * Tests with win32 FTP server (UNIX type). Works.
+  * Added a 'Change dir' button to the dir input box for clarity.
+  * Comments fixed in source.
+  * Fixes in the setup script.
+  
+[v0.7.0] <%%EMAIL> ( Mon Jan 26 23:31:18 CET 2004 )
+  * register_global=off Compatible.
+  * Rewrote authorization / login / ftp connect stuff.
+  * Minor code-cleanups.
+  * Rewrote most parts of sorting. USort functions are now cleaner and 
+    faster. Sorting directions are correct. Sorting another column will
+    not alternate the sort direction. (i.e: current sort is "filename-ASC". 
+    Click date and sort will become "date-DESC". Should be: "date-ASC".
+  * Fixed numerous warnings.
+  * FTP servers on different ports are now supported.
+  * Anonymous FTP supported.
+  * Univeral Error() function.
+  * Better error checking all over (just about all ftp_* functions).
+  * Most icons now have onMouseOver information.
+  
+[v0.6.3] <%%EMAIL> ( Mon Nov 10 19:45:30 CET 2003 )
+  * Non-file lines in the rawlist returned by the ftp server are now ignored.
+  * Bugfix for incorrect pop-up sizes.
+  * Hidden files can now be shown or hidden (default). Setting is rembered during
+    session.
+  * Directories are now always at the top of the list.
+
+[v0.6.2] <%%EMAIL> ( Thu Sep  4 17:23:10 CEST 2003 )
+  * Fixed a bug where you couldn't log in if only one hostname was specified.
+  * Fixed a bug where downloads wouldn't work in new PHP versions due to wrong FTP URL.
+
+[v0.6.1] <%%EMAIL> ( Sat Jun  7 02:20:38 CEST 2003 )
+  * Added confirmation dialogs to the delete operations (only direct delete
+    icons, not the explicit select files & delete button action)
+  * Added tooltips (mousecursor hover) to the icons.
+
+[v0.6.0] <%%EMAIL> ( Sat Apr 19 13:33:21 CEST 2003 )
+  * Implemented sorting on various column headers.
+  * Directories are now deleted recursively.
+
+[v0.5.3] <%%EMAIL> ( Sat Mar 22 13:40:54 CET 2003 )
+  * Created a document containing testcases. Only useful for developers. You
+    can find it under docs/developer/testcases.txt
+  * Fixed the time-out username bug. When the session would time-out, the 
+    login box would be displayed again, but the username entry would be filled
+    with the previous directory. Now you will be returned to the correct 
+    directory after logging in again.
+  * Fixed numerous bugs in weird dir and filenames (containing &, +, etc)
+  * Added 'About WTP' information to help screen, including a GPL notice and 
+    links to the homepage.
+
+[v0.5.2] <%%EMAIL> ( Thu Mar 13 23:08:51 CET 2003 )
+  * Fixed multiple errors with wrongly passed file and dirnames. More errors
+    are present, but these were the most important to address.
+
+[v0.5.1] <%%EMAIL> ( Sun Feb 16 00:04:56 CET 2003 )
+  * Fixed bug in the bookmark selector on the button bar. 
+
+[v0.5.0] <%%EMAIL> ( Mon Jan 27 13:50:57 CET 2003 )
+  * Lines read from the ftp server's LIST output with less than 12 columns
+    are now ignored. This adds compatibility with MicroBSD 6.5 FTP server)
+  * WTP can now be configured to allow access to a list of hosts
+  * It is now possible to move a file or set of files.
+  * The bookmarks filename separator has changed from '-' to ' '. (space)
+  * Changed the default preferences path from /usr/local/wtp to /var/wtp.
+
+[v0.4.1] <%%EMAIL> ( Sat Jan  4 16:05:47 CET 2003 )
+  * Fixed repeated display of hidden form fields in DirList display.
+  * A dir can be specified before log-in. After logging in, the user will
+    be taken to this dir automatically.
+  
+[v0.4.0] <%%EMAIL> ( Sat Dec 28 17:19:53 CET 2002 )
+  * Added a help screen.
+  * 'Current dir' path's can now be clicked, so you can move to them quick
+  * Numbers are now seperated with ',' each thousands
+  * Added file selection & deletion support.
+  * Fixed double display of html headers in DirList
+
+[v0.3.1] <%%EMAIL> ( ? )
+  * IE SSL download bug fixed. This was not a WTP bug, but a IE/apache-ssl bug.
+    Please read section 'Installing' in the README for information on how to 
+    fix this bug. (closes bug #2);
+  I Think I forgot to release this version?
+
+[v0.3.0] <%%EMAIL> ( ?  )
+  * Bookmark support added. Everything now needs a code cleanup. Thank you 
+    late-night-coding ;)
+  * The way the current dir is displayed has been made better readable.
+  * Temporarily removed the useless File/Dir move icon until move has been implemented.
+  * Created an installation script.
+  * Fixed the '+' download bug (bug-id 1)
+
+[v0.2.3] <%%EMAIL> ( Fri May 10 13:30:09 CEST 2002 )
+  * Added a 'WTP' text in the buttonbar.
+
+[v0.2.2] <%%EMAIL> ( Fri May 10 13:30:09 CEST 2002 )
+  * Fixed the toolbar background for IE.
+  * Fixed monospaced fonts for IE.
+
+[v0.2.1] <%%EMAIL> ( Tue May  7 20:52:04 CEST 2002 )
+  * Fixed the spaces between month/day/year.
+
+[v0.2.0] <%%EMAIL> ( Sun May  5 14:05:32 CEST 2002 )
+  * Better error checking at login
+  * Pop-ups with error messages at login
+  * Prefill of login boxes on error
+  * Downloaded files are now named correctly 
+  * Fixed the need to shift-click download files.
+  * Added header which sends files size at download.
+  * Added refresh option
+  * Correct handling of files with '+'. Closes bug #1
+  * Correct(er) handling of symlinks.
+  * Login information is now stored in session instead of cookies.
+
+[v0.1.0] <%%EMAIL> ( Sun May  5 14:05:32 CEST 2002 )
+  * Initial release.

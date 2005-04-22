@@ -1,0 +1,161 @@
+WTP v%%VERSION
+
+Copyright (c) 2002-2003, Ferry Boender <%%EMAIL>
+
+%%HOMEPAGE
+
+Licensed under the General Public License (GPL), see COPYING file 
+provided with this program.
+
+
+Contents of this document
+-------------------------------------------------------------------------------
+
+	1. What is WTP?
+	2. Requirements.
+	3. Installation.
+	4. Copyright stuff.
+	5. Contact information.
+
+
+1. What is WTP?
+-------------------------------------------------------------------------------
+
+	WTP is a webbased FTP client written in PHP. It allows you to access FTP
+	sites through a kind of web-proxy. The client (your browser) connects to 
+	a webserver and the webserver connects to the FTP server.
+    
+	WTP is a very thin client. It doesn't handle all types of FTP servers and
+	doesn't implement a full FTP feature-set. It is merely meant as an easy
+	user friendly way for people to access, manage, download and upload files 
+	from a particular site.
+
+2. Requirements.
+-------------------------------------------------------------------------------
+
+	WTP requires:
+		* PHP 4.1+ with FTP functions enabled.
+		* For downloads to work: A FTP server which supports Passive FTP.
+
+	WTP was developed for the following programs, and may therefor not work
+	on any or all other services:
+		* PHP 4.1.2
+		* Mozilla / Galeon
+		* ProFTP 1.2.0pre10
+	
+	It is confirmed that WTP also works with the following:
+		* ProFTP 1.2.0pre10
+		* NetKit FTP server 0.17-14 (Debian GNU/Linux Woody)
+		* MicroBSD FTP server v6.5 (MicroBSD)
+		* Pure-FTPd 1.0.16 (on OpenBSD 3.4)
+		* WarFTPd (win32) 1.70/1.80
+
+		(If you can confirm that WTP also works on other configurations, 
+		please let me know by emailing me about it)
+
+
+3. Installation.
+-------------------------------------------------------------------------------
+	
+	If you are upgrading from a previous version of WTP, please read through 
+	the UPGRADING file, for	information on significant changes in the latest
+	releases of WTP which might break the installation or user's files.
+
+	Automatic:
+	
+		Since version 0.4.0, WTP's default preferences directory has changed
+		from /usr/local/wtp to /var/wtp. Please take it in consideration.
+		
+		1. Run setup.sh (at the commandprompt type: ./setup.sh)
+		2. You may want to modify your PHP's configuration options to allow larger
+		   HTTP-post file uploads. You can do this by modifying the following 
+		   options in your php.ini file:
+		   upload_max_filesize = 20M
+		   post_max_size  = 20M
+		3. Internet Explorer suffers from a bug which causes downloads through
+		   SSL to fail. Adding this to your apache-ssl configuration might
+		   fix it:
+
+		   BrowserMatch ".*MSIE.*" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+
+		   For Debian, it should be added to the srm.conf file.
+
+		   This is not a sure fix. It has been known to work for some people,
+		   and fail for some others. This is a Internet Explorer bug, 
+		   and can't be helped unless Microsoft clean's up and starts
+		   adhering to the basic rules of 'standards' instead of doing
+		   everything their own way (and not documenting them).
+		4. Some configurations of PHP have open_basedir set. This will interfer 
+		   with WTP's ability to save bookmarks. You should include the preference
+		   directory which you specified during install to the open_basedir 
+		   directive.
+		   
+	Manually:
+
+		Since version 0.4.0, WTP's default preferences directory has changed
+		from /usr/local/wtp to /var/wtp. Please take it in consideration.
+		
+		1. Copy the wtp.php file somewhere in your webserver's accessible path.
+		2. Copy the images/ dir to the same dir as wtp.php
+		3. Edit the wtp file and change any variables in the CHANGE THESE VARS 
+		   section.
+		4. You may want to modify your PHP's configuration options to allow larger
+		   HTTP-post file uploads. You can do this by modifying the following 
+		   options in your php.ini file:
+		   upload_max_filesize = 20M
+		   post_max_size  = 20M
+		5. Internet Explorer suffers from a bug which causes downloads through
+		   SSL to fail. Adding this to your apache-ssl configuration will 
+		   fix it:
+
+		   BrowserMatch ".*MSIE.*" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+
+		   For Debian, it should be added to the srm.conf file.
+		6. Some configurations of PHP have open_basedir set. This will interfer 
+		   with WTP's ability to save bookmarks. You should include the preference
+		   directory which you specified during install to the open_basedir 
+		   directive.
+
+4. Copyright stuff.
+-------------------------------------------------------------------------------
+
+	WTP is Copyright by Ferry Boender,
+	licensed under the General Public License (GPL)
+
+	Copyright (C), 2002-2003 by Ferry Boender <fboender at nihlist.nl>
+
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+        
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+        
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+                
+	For more information, see the COPYING file supplied with this
+	program.
+
+
+5. Contact information.
+-------------------------------------------------------------------------------
+
+	Author:
+
+		Ferry Boender
+		email: %%EMAIL
+		%%MYHOMEPAGE
+
+	Please report any bugs, request and general comments to the email
+	address stated above.
+
+	You may also use a beta version of my project management system,
+	called PROMS, to report bugs and feature request. It is located at
+	
+	http://projects.electricmonk.nl/index.php?action=ProjectOverview&project_id=3
+	

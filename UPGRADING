@@ -1,0 +1,27 @@
+
+Upgrading WTP.
+
+This file is here so you will know what to look for if you are upgrading from
+a previous version of WTP. Please read this file carefully, and follow all
+steps from the sections, starting with the one which follows the release version
+you are currently using.
+
+
+v0.5.0
+------
+In this version, the bookmarks file in the preferences directory have changed.
+WTP used to separate the username and hostname by using a '-', which is wrong,
+since these might also be used in domainnames. Therefor the new separator is
+' ' (space), and all bookmark files (hostname.tld-username) need to be renamed 
+(hostname.tld username). This will have to be done by hand (sorry), using the
+'mv' command:
+
+[root@sharky]/var/wtp/# mv nihilist.nl-todsah nihilist.nl\ todsah
+[root@sharky]/var/wtp/# mv this-host.nihilist.nl-todsah this-host.nihilist.nl\ todsah
+
+
+The default preferences directory has also changed from /usr/local/wtp/ to 
+/var/wtp. You will have to move the bookmark files in the old path to the 
+new path, after running the install script, or you may simply specify the old
+directory as the preferences path.
+
