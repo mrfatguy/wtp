@@ -606,7 +606,7 @@ function DirList($FtpStream, $Username, $Hostname, $RemoteDir, $Bookmarks, $Sort
 	?>
 	
 	<table width="100%" border="0" cellspacing="0" cellpadding="2">
-	<form target="<?=$PHP_SELF?>" method="POST">
+	<form target="<?=$_SERVER['PHP_SELF']?>" method="POST">
 	<tr bgcolor="#004f9e">
 		<?
 		?>
